@@ -1,4 +1,4 @@
-SRCS = push_swap.c ft_atol.c ft_split.c libft.c node_utils.c node_utils2.c operation_calls.c algorithm.c
+SRCS = push_swap.c ft_atol.c ft_split.c libft.c libft2.c node_utils.c node_utils2.c operation_calls.c algorithm.c bitwise_utils.c operation_functions.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 FLAGS = -Wall -Wextra -Werror
