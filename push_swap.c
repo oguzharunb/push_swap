@@ -6,7 +6,7 @@
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 14:17:14 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/10 19:35:47 by obastug          ###   ########.fr       */
+/*   Updated: 2025/01/11 18:39:50 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,17 @@ t_node	*str_to_linked_list(char **argv)
 	return (list);
 }
 
-#include <stdio.h>
-#include <string.h>
 int	main(int argc, char *argv[])
 {
-//	t_node	*stack_a;
+	t_node	*stack_a;
 	t_node	*stack_b;
-//	int		deneme;
-//
-	control_args(argv + 2);
-	stack_b = str_to_linked_list(argv + 2);
-	if (!stack_b)
+	int		deneme;
+
+	if (argc == 1)
 		return (1);
-//	char	*argv2[5] = {strdup("2"), strdup("3"), strdup("4"), strdup("5"), NULL};
-//	stack_b = str_to_linked_list((char **)argv2);
-//	if (!stack_a)
-//		return (1);
-//	find_best_solution_apply_and_print(stack_a, stack_b);
-	//int op_number = calculate_number_of_ops(5, 4, 5, 4);
-	int	place = find_place_for_number_in_list(stack_b, ft_atol(argv[1]));
-	print_linked_list(stack_b);
-	printf("%d's place is %d\n", ft_atol(argv[1]), place);
+	control_args(argv + 1);
+	stack_a = str_to_linked_list(argv + 1);
+	print_ops_for_linked_list(&stack_a);
+	free_linked_list(stack_a);
 	return (0);
 }
