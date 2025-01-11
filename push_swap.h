@@ -6,12 +6,14 @@
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 14:18:43 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/11 18:52:03 by obastug          ###   ########.fr       */
+/*   Updated: 2025/01/11 19:21:14 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+
+# include <stdlib.h>
 
 typedef struct s_node
 {
@@ -36,6 +38,11 @@ void			swap_both(t_node **stack_a, t_node **stack_b);
 void			rotate_both(t_node **stack_a, t_node **stack_b);
 void			reverse_rotate_both(t_node **stack_a, t_node **stack_b);
 
+void			move_node_op1(t_node **s_a, t_node **s_b, int ia, int ib);
+void			move_node_op2(t_node **s_a, t_node **s_b, int ia, int ib);
+void			move_node_op3(t_node **s_a, t_node **s_b, int ia, int ib);
+void			move_node_op4(t_node **s_a, t_node **s_b, int ia, int ib);
+
 void			ft_putchar(char c);
 void			ft_putstr(char *s);
 void			ft_putnbr(int n);
@@ -49,9 +56,9 @@ int				min_of_4(int a, int b, int c, int d);
 unsigned long	right32bit(unsigned long number);
 unsigned long	left32bit(unsigned long number);
 
-int				find_best_solution_apply_and_print(t_node **a, t_node **b);
+int				apply_and_print(t_node **a, t_node **b, int i, __u_long r_a);
 int				find_place_for_number_in_list(t_node *stack_b, int number);
-unsigned long	calculate_number_of_ops(int a_size, int ia, int b_size, int ib);
+unsigned long	min_number_of_ops(int a_size, int ia, int b_size, int ib);
 void			print_ops_for_linked_list(t_node **list);
 
 #endif
