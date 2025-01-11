@@ -6,7 +6,7 @@
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:51:06 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/11 19:24:39 by obastug          ###   ########.fr       */
+/*   Updated: 2025/01/11 19:31:23 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ void	print_ops_for_linked_list(t_node **list)
 		push(list, &s_b);
 		push(list, &s_b);
 		write(1, "pb\npb\n", 6);
-		return (2);
+		return ;
 	}
 	while (*list)
 		apply_and_print(list, &s_b, 0, 0);
