@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_utils2.c                                      :+:      :+:    :+:   */
+/*   node_utils2_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 14:58:41 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/11 20:11:22 by obastug          ###   ########.fr       */
+/*   Updated: 2025/01/11 20:26:43 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 #include <unistd.h>
 
 void	print_linked_list(t_node *list)

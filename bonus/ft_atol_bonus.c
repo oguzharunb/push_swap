@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_atol_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 12:46:47 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/11 20:12:53 by obastug          ###   ########.fr       */
+/*   Updated: 2025/01/11 21:34:39 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stddef.h>
+
+void	ft_bzero(void *s, size_t n)
+{
+	register size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = 0;
+		i++;
+	}
+}
 
 static void	between_int_max_and_min(long value)
 {

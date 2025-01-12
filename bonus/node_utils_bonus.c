@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   node_utils.c                                       :+:      :+:    :+:   */
+/*   node_utils_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 17:21:37 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/11 22:02:00 by obastug          ###   ########.fr       */
+/*   Created: 2025/01/11 20:26:50 by obastug           #+#    #+#             */
+/*   Updated: 2025/01/11 22:01:53 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 #include <stddef.h>
 #include <stdlib.h>
 

@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obastug <obastug@student.42kocaeli.com.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/01 14:17:14 by obastug           #+#    #+#             */
-/*   Updated: 2025/01/11 20:51:22 by obastug          ###   ########.fr       */
+/*   Created: 2025/01/11 19:27:19 by obastug           #+#    #+#             */
+/*   Updated: 2025/01/12 13:59:26 by obastug          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker_bonus.h"
 #include <stdlib.h>
 #include <unistd.h>
 
-//returns number of elements, due to an error returns -1.
 void	control_args(char **argv)
 {
 	int	i;
@@ -46,9 +45,33 @@ t_node	*str_to_linked_list(char **argv)
 	return (list);
 }
 
+void	read_and_apply(t_node **stack_a, t_node **stack_b)
+{
+	char	buffer[10];
+	int		ret;
+
+	while (1)
+	{
+		ret = read(STDIN_FILENO, buffer, 5);
+		if (!ret)
+			return ;
+		if (*buffer == '\n')
+			return ;
+		buffer[ret] = '\0';
+		if (!apply_operation(stack_a, stack_b, buffer))
+		{
+			free_linked_list(*stack_a);
+			free_linked_list(*stack_b);
+			write(2, "Error\n", 6);
+			exit(1);
+		}
+	}
+}
+
 int	main(int argc, char *argv[])
 {
 	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (argc == 1)
 		return (1);
@@ -60,7 +83,13 @@ int	main(int argc, char *argv[])
 		write(STDERR_FILENO, "Error\n", 6);
 		return (1);
 	}
-	print_ops_for_linked_list(&stack_a);
+	stack_b = NULL;
+	read_and_apply(&stack_a, &stack_b);
+	if (check_is_sorted(stack_a, stack_b))
+		write(1, "OK\n", 3);
+	else
+		write(1, "KO\n", 3);
 	free_linked_list(stack_a);
+	free_linked_list(stack_b);
 	return (0);
 }
